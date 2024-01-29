@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Logo from "./Logo";
+import Form from "./Form";
 import PackingList from "./PackingList";
 import Stats from "./Stats";
-import Form from "./Forn";
 
 export default function App() {
   const [items, setItems] = useState([]);
@@ -25,7 +25,7 @@ export default function App() {
 
   function handleClearList() {
     const confirmed = window.confirm(
-      "Are U Sure , you want to delete all items ?"
+      "Are you sure you want to delete all items?"
     );
 
     if (confirmed) setItems([]);
@@ -38,8 +38,8 @@ export default function App() {
       <PackingList
         items={items}
         onDeleteItem={handleDeleteItem}
-        onToggleItems={handleToggleItem}
-        clearList={handleClearList}
+        onToggleItem={handleToggleItem}
+        onClearList={handleClearList}
       />
       <Stats items={items} />
     </div>
